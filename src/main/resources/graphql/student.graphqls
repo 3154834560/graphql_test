@@ -1,0 +1,32 @@
+# ! 表示不能为空
+# extend 表示继承，继续对 acommn.qraphql 中 Query 的编写
+extend type Query{
+    studentQuery :Student
+    studentQueryList:[Student!]
+    studentQueryBy(id:String!): Student
+}
+
+# extend 表示继承，继续对 acommn.qraphql 中 Mutation 的编写
+extend type Mutation{
+    createStudent(input:StudentInput):Student
+}
+
+# input 表示StudentInput只能作为为参数
+# 且必须创建一个名字、参数都与这里定义相同的类
+input StudentInput{
+    name:String
+    sex:SexEnum
+    birthday:LocalDateTime
+    classesInput:ClassesInput
+}
+
+# type 表示Student不能作为为参数，可为返回值
+# 且必须创建一个名字、参数都与这里定义相同的类
+type Student {
+    id:String
+    name:String
+    sex:SexEnum
+    birthday:LocalDateTime
+    classes:Classes
+}
+

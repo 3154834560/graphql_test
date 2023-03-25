@@ -1,0 +1,24 @@
+# extend 表示继承，继续对 acomm.qraphql 中 Query 的编写
+extend type Query{
+    classesQuery:Classes
+    classesQueryList:[Classes!]
+    classesQueryBy(id:String!):Classes
+}
+
+# extend 表示继承，继续对 acomm.qraphql 中 Mutation 的编写
+extend type Mutation {
+    createClasses(input:ClassesInput):Classes
+}
+
+# input 表示ClassesInput只能作为为参数
+# 且必须创建一个名字、参数都与这里定义相同的类
+input ClassesInput{
+    name:String
+}
+
+# type 表示Classes不能作为为参数，可为返回值
+# 且必须创建一个名字、参数都与这里定义相同的类
+type Classes{
+    id:String
+    name:String
+}

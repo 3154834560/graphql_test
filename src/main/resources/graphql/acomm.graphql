@@ -1,0 +1,31 @@
+# Scalar 是一种标量数据类型，表示单个原始值。GraphQL 内置了几种标量类型，包括 Int、Float、String、Boolean、ID 等，客户端和服务端可以使用这些标量类型来定义和约束数据模型。
+# 除了内置的标量类型外，GraphQL 还允许用户自定义标量类型，以满足业务需求。例如，如果我们需要表示日期时间类型的数据，可以通过自定义 Scalar 类型来实现。
+# 自定义 Scalar 类型需要指定以下三个方法：
+# 在 GraphQL 中，要自定义标量类型，需要实现 GraphQLScalarType 接口。
+# parseLiteral：用来读取从客户端传递的常量值，例如在查询中直接写入的字符串或数字等。
+# parseValue：用来读取从客户端传递的变量值
+# serialize：将类型的值序列化为字符串表示形式，用于输出到客户端
+scalar LocalDateTime
+
+# Schema 是一个重要的概念，用于定义数据在服务端如何组织和暴露给客户端
+# Schema 描述了所有可用的数据类型（Data Type）、查询(Query)和变更(Mutation)以及订阅（Subscription），并指定它们之间的关联关系
+schema {
+    # query
+    query: Query
+    # mutation
+    mutation: Mutation
+}
+
+type Query {
+    # ! 表示不能为空，[]表示为链表或数组
+}
+
+type Mutation{
+}
+
+#定义一个枚举类
+# Sex 可为参数，也可为返回值
+enum SexEnum{
+    MALE
+    FEMALE
+}
