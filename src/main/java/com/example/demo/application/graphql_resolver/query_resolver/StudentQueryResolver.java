@@ -1,6 +1,7 @@
 package com.example.demo.application.graphql_resolver.query_resolver;
 
 import cn.hutool.core.lang.UUID;
+import com.example.demo.domain.model.Classes;
 import com.example.demo.domain.model.SexEnum;
 import com.example.demo.domain.model.Student;
 import graphql.kickstart.tools.GraphQLQueryResolver;
@@ -23,6 +24,10 @@ public class StudentQueryResolver implements GraphQLQueryResolver {
         student.setName("wjy");
         student.setSex(SexEnum.MALE);
         student.setBirthday(LocalDateTime.now());
+        Classes classes = new Classes();
+        classes.setName("kkk");
+        classes.setId(UUID.fastUUID().toString());
+        student.setClasses(classes);
         return student;
     }
 
@@ -36,6 +41,10 @@ public class StudentQueryResolver implements GraphQLQueryResolver {
             student.setSex(SexEnum.MALE);
             students.add(student);
             student.setBirthday(LocalDateTime.now());
+            Classes classes = new Classes();
+            classes.setId(UUID.fastUUID().toString());
+            classes.setName("kkk  " + i);
+            student.setClasses(classes);
         }
         return students;
     }
@@ -46,6 +55,10 @@ public class StudentQueryResolver implements GraphQLQueryResolver {
         student.setName("wjy");
         student.setSex(SexEnum.MALE);
         student.setBirthday(LocalDateTime.now());
+        Classes classes = new Classes();
+        classes.setId(UUID.fastUUID().toString());
+        classes.setName("kkk");
+        student.setClasses(classes);
         return student;
     }
 }

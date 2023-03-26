@@ -64,7 +64,6 @@ public class LocalDateTimeScalar {
 
         private LocalDateTime parse(Object o) {
             long time;
-            System.out.println(o);
             if (o instanceof Long) {
                 time = (Long) o;
             } else if (o instanceof String) {
