@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.example.demo.config.converters;
 
 import org.jetbrains.annotations.NotNull;
 import org.springframework.core.convert.TypeDescriptor;

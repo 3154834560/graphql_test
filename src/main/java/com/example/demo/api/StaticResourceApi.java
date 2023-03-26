@@ -1,6 +1,6 @@
 package com.example.demo.api;
 
-import com.example.demo.config.LocalDateTimeConverter;
+import com.example.demo.config.converters.LocalDateTimeConverter;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.format.FormatterRegistry;
