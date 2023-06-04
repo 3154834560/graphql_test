@@ -7,7 +7,7 @@ import org.springframework.format.FormatterRegistry;
 import org.springframework.http.converter.HttpMessageConverter;
 import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-import org.springframework.web.servlet.config.annotation.WebMvcConfigurationSupport;
+import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 import java.util.List;
 import java.util.Objects;
@@ -18,7 +18,7 @@ import java.util.Objects;
  */
 @Configuration
 @RequiredArgsConstructor
-public class StaticResourceApi extends WebMvcConfigurationSupport {
+public class StaticResourceApi implements WebMvcConfigurer {
 
     /**
      * 访问静态资源

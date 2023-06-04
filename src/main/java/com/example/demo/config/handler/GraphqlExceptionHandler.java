@@ -7,6 +7,8 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 
 /**
+ * Graphql全局异常拦截
+ *
  * @author 王景阳
  * @date 2023-03-26 12:22
  */

@@ -4,6 +4,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 /**
+ * restful全局异常拦截
+ *
  * @author 王景阳
  * @date 2023-03-26 13:11
  */
